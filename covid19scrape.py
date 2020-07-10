@@ -16,13 +16,15 @@ xfile = openpyxl.load_workbook('state_covid19.xlsx')
 sheet = xfile['Sheet1']
 diff = (date.today()-date(2020,7,7)).days + 168
 
+### Converts a numerical value into an excel sheet's columns, so like "AF" or "EB"
+
 code = ""
 first_letter = math.floor((diff-1)/26)
 code += chr(ord('@')+first_letter)
 diff -= (first_letter*26)
 code += chr(ord('@')+diff)
 
-c = 2
+c = 2 # Starts at column 2
 for states in states_fullname:
   print(states)
   fname = 'https://www.worldometers.info/coronavirus/usa/' + states + '/'
@@ -32,6 +34,8 @@ for states in states_fullname:
 
   containers = page_soup.findAll("div", {"class": "maincounter-number"})
   container = containers[0]
+  
+  ### Replace spaces and commas
   num = container.span.text.replace(' ', '')
   num = num.replace(',', '')
   sheet[str(code) + str(c)].value = int(num)

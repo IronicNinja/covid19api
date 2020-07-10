@@ -72,6 +72,8 @@ for state in states_list:
         df0[id] = pytrends.interest_over_time()[id]
     state_df[state] = df0
 
+### Save each dataframe as an excel sheet
+
 def saver(dictex):
     for key, val in dictex.items():
         val.to_csv("data_{}.csv".format(str(key)))

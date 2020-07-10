@@ -11,16 +11,15 @@ states_list = {
 'TX': 0, 'UT': 0, 'VT': 0, 'VA': 0, 'WA': 0, 'WV': 0, 'WI': 0, 'WY': 0
 }
 
-
 covid_df = pd.DataFrame({})
 diff = (date.today()-date(2020,1,22)).days + 4
 
 c = 1
-date = 4
+date = 4 # Starts from first sunday (after where the dataset starts, so 1/26/2020)
 while date < diff:
   print(date)
   for c in range(1, len(df)):
-    if df.iloc[c][2] == 'DC':
+    if df.iloc[c][2] == 'DC': #Don't include DC
       c += 1
       continue
     states_list[df.iloc[c][2]] += df.iloc[c][date]
