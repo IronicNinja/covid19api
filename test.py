@@ -7,11 +7,6 @@ search_period = 'today 12-m'
 pytrends = TrendReq(hl='en-US', tz=420)
 kw_list = ["depression", "anxiety", "panic attack", "insomnia", "loneliness", "coronavirus"]
 
-df = pd.DataFrame({})
-for id in kw_list:
-    pytrends.build_payload([id], geo='US', timeframe = search_period)
-    df[id] = pytrends.interest_over_time()[id]
-
 ### populations link: https://www.statista.com/statistics/183497/population-in-the-federal-states-of-the-us/
 ### repub vs democrat (2018): https://news.gallup.com/poll/247025/democratic-states-exceed-republican-states-four-2018.aspx
 states_list = {
@@ -70,10 +65,11 @@ states_list = {
 state_df = {}
 
 for state in states_list:
+    print(state)
     df0 = pd.DataFrame({})
     for id in kw_list:
         pytrends.build_payload([id], geo='US' + '-' + state, timeframe = search_period)
         df0[id] = pytrends.interest_over_time()[id]
     state_df[state] = df0
 
-pickle.dump(state_df, open("states_str.p", "wb"))
+state_df.to_excel('dataframes.xlsx')
