@@ -1,4 +1,4 @@
-# covid19 API
+# Covid19 API
 
 This is the file from which I pull data from for my "Mental Health Post Covid19" Kernel, which can be found here: https://www.kaggle.com/ironicninja/mental-health-postcovid19. There are a couple of files here, each of which you may use to either replicate the results or create your own analysis.
 
