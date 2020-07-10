@@ -2,10 +2,10 @@ import pandas as pd
 from pytrends.request import TrendReq
 import pickle
 
-search_period = 'today 12-m'
+search_period = '2019-07-07 2020-07-05'
 
 pytrends = TrendReq(hl='en-US', tz=420)
-kw_list = ["depression", "anxiety", "panic attack", "insomnia", "loneliness", "coronavirus"]
+kw_list = ["depression", "anxiety", "panic attack", "insomnia", "loneliness", "covid"]
 
 ### populations link: https://www.statista.com/statistics/183497/population-in-the-federal-states-of-the-us/
 ### repub vs democrat (2018): https://news.gallup.com/poll/247025/democratic-states-exceed-republican-states-four-2018.aspx
@@ -72,4 +72,10 @@ for state in states_list:
         df0[id] = pytrends.interest_over_time()[id]
     state_df[state] = df0
 
-state_df.to_excel('dataframes.xlsx')
+def saver(dictex):
+    for key, val in dictex.items():
+        val.to_csv("data_{}.csv".format(str(key)))
+    with open("keys.txt", "w") as f:
+        f.write(str(list(dictex.keys())))
+
+saver(state_df)
