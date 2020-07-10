@@ -1,6 +1,9 @@
-# covid19api
+# covid19 API
 
 This is the file from which I pull data from for my "Mental Health Post Covid19" Kernel, which can be found here: https://www.kaggle.com/ironicninja/mental-health-postcovid19. There are a couple of files here, each of which you may use to either replicate the results or create your own analysis.
+
+
+# File Descriptions
 
 The **convert.py** file is a file which converts a dataset from showing counties' covid numbers to showing states' covid numbers. The original dataset is here: https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/. Note that the code should convert everything up to your last Sunday, but for my purposes, the last week it converts is to July 5, 2020. Additionally, it starts converting the numbers on Janurary 26, 2020, which is the first Sunday after the dataset starts.
 
