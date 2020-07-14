@@ -1,3 +1,5 @@
+### fun webscraping tool, not really relevant to anything
+
 from bs4 import BeautifulSoup as soup
 from urllib.request import Request, urlopen
 from datetime import date

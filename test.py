@@ -2,7 +2,7 @@ import pandas as pd
 from pytrends.request import TrendReq
 import pickle
 
-search_period = '2019-07-07 2020-07-05'
+search_period = '2019-06-02 2020-05-31'
 
 pytrends = TrendReq(hl='en-US', tz=420)
 kw_list = ["depression", "anxiety", "panic attack", "insomnia", "loneliness", "covid"]
