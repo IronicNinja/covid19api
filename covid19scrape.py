@@ -26,7 +26,6 @@ code += chr(ord('@')+diff)
 
 c = 2 # Starts at column 2
 for states in states_fullname:
-  print(states)
   fname = 'https://www.worldometers.info/coronavirus/usa/' + states + '/'
   req = Request(fname, headers={'User-Agent': 'Mozilla/5.0'})
   webpage = urlopen(req)
