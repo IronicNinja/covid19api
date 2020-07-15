@@ -76,7 +76,7 @@ for state in states_list:
 
 def saver(dictex):
     for key, val in dictex.items():
-        val.to_csv("data_{}.csv".format(str(key)))
+        val.to_excel("states/data_{}.xlsx".format(str(key)))
     with open("keys.txt", "w") as f:
         f.write(str(list(dictex.keys())))
 
