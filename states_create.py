@@ -1,3 +1,5 @@
+### driver code for creating the state level datasets
+
 import pandas as pd
 from pytrends.request import TrendReq
 import pickle
