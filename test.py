@@ -2,7 +2,7 @@ import pandas as pd
 from pytrends.request import TrendReq
 import pickle
 
-search_period = '2019-06-02 2020-05-31'
+search_period = '2020-1-26 2020-07-05'
 
 pytrends = TrendReq(hl='en-US', tz=420)
 kw_list = ["depression", "anxiety", "panic attack", "insomnia", "loneliness", "covid"]
@@ -76,7 +76,7 @@ for state in states_list:
 
 def saver(dictex):
     for key, val in dictex.items():
-        val.to_excel("states/data_{}.xlsx".format(str(key)))
+        val.to_excel("states_covid/data_{}.xlsx".format(str(key)))
     with open("keys.txt", "w") as f:
         f.write(str(list(dictex.keys())))
 

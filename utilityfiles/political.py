@@ -1,5 +1,7 @@
 import pandas as pd
 
+### populations link: https://www.statista.com/statistics/183497/population-in-the-federal-states-of-the-us/
+### repub vs democrat (2018): https://news.gallup.com/poll/247025/democratic-states-exceed-republican-states-four-2018.aspx
 states_list = {
     'AL': {'population': 4.9, 'repub': 52,'democrat': 35},
     'AK': {'population': 0.73, 'repub': 51,'democrat': 33},
@@ -53,6 +55,7 @@ states_list = {
     'WY': {'population': 0.58, 'repub': 59,'democrat': 25}
 }
 
+### Using the electoral college system for black and white analysis, based on https://www.270towin.com/
 electoral_list = {
     'AL': {'votes': 9, 'party': 'R'},
     'AK': {'votes': 3, 'party': 'R'},

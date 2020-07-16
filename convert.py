@@ -1,3 +1,5 @@
+### converts covid data from daily to weekly
+
 import pandas as pd
 from datetime import date
 
