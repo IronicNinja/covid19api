@@ -8,7 +8,7 @@ search_period = '2019-06-02 2020-05-31' #search the past year
 pytrends = TrendReq(hl='en-US', tz=420)
 kw_list = ["depression", "anxiety", "panic attack", "insomnia", "loneliness", "covid"] #list of keywords
 kw_listextra = ["depression", "anxiety", "panic attack", "insomnia", "loneliness"]
-kw_list_help = ["rehab", "meditation", "online therapy", "herbs"]
+kw_list_help = ["rehab", "meditation", "online therapy", "herbs", "online counseling"]
 
 ### Building the dataframe
 df = pd.DataFrame({})
